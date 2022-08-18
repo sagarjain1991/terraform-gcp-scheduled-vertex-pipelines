@@ -133,10 +133,10 @@ module "hello_world_pipeline" {
   parameter_values = {
     "text" = "Hello, world!"
   }
-  gcs_output_directory         = "gs://mlops2022-359605-bucket-winequality/my-output-directory"
+  gcs_output_directory         = "gs://mlops2022-359605-bucket-winequality"
   vertex_service_account_email = "45027067764-compute@developer.gserviceaccount.com"
   time_zone                    = "UTC"
   schedule                     = "0 0 * * *"
-  cloud_scheduler_job_name     = "pipeline-from-gcs-spec"
+  cloud_scheduler_job_name     = "tf-pipeline-from-gcs-schedule"
 
 }
