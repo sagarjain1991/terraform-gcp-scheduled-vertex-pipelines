@@ -125,7 +125,8 @@ resource "google_cloud_scheduler_job" "job" {
 
 
 module "hello_world_pipeline" {
-  source                 = "../../"
+  source                 = "teamdatatonic/scheduled-vertex-pipelines/gcp"
+  version                = "1.0.0"
   project                = "mlops2022-359605"
   vertex_region          = "europe-west1"
   cloud_scheduler_region = "europe-west1"
