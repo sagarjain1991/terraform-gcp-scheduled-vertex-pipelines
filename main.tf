@@ -124,16 +124,13 @@ resource "google_cloud_scheduler_job" "job" {
 
 
 
-module "hello_world_pipeline" {
-  source                 = "teamdatatonic/scheduled-vertex-pipelines/gcp"
-  version                = "1.0.0"
+module "scheduled-vertex-pipelines" {
+  source  = "teamdatatonic/scheduled-vertex-pipelines/google"
+  version = "1.0.0"
   project                = "mlops2022-359605"
   vertex_region          = "europe-west1"
   cloud_scheduler_region = "europe-west1"
   pipeline_spec_path     = "gs://mlops2022-359605-bucket-winequality/pipeline_root_wine/45027067764/ml_winequality.json"
-  parameter_values = {
-    "text" = "Hello, world!"
-  }
   gcs_output_directory         = "gs://mlops2022-359605-bucket-winequality"
   vertex_service_account_email = "45027067764-compute@developer.gserviceaccount.com"
   time_zone                    = "UTC"
